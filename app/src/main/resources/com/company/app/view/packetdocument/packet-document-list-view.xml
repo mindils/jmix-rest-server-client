@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://packetDocumentListView.title"
+      focusComponent="packetDocumentsDataGrid">
+  <data>
+    <collection id="packetDocumentsDc"
+                class="com.company.app.entity.PacketDocument">
+      <loader id="packetDocumentsDl" readOnly="true"/>
+    </collection>
+  </data>
+  <facets>
+    <dataLoadCoordinator auto="true"/>
+    <urlQueryParameters>
+      <pagination component="pagination"/>
+    </urlQueryParameters>
+  </facets>
+  <actions>
+    <action id="selectAction" type="lookup_select"/>
+    <action id="discardAction" type="lookup_discard"/>
+  </actions>
+  <layout>
+    <hbox id="buttonsPanel" classNames="buttons-panel">
+      <button id="createButton" action="packetDocumentsDataGrid.createAction"/>
+      <button id="editButton" action="packetDocumentsDataGrid.editAction"/>
+      <button id="removeButton" action="packetDocumentsDataGrid.removeAction"/>
+      <simplePagination id="pagination" dataLoader="packetDocumentsDl"/>
+    </hbox>
+    <dataGrid id="packetDocumentsDataGrid"
+              width="100%"
+              minHeight="20em"
+              dataContainer="packetDocumentsDc"
+              columnReorderingAllowed="true">
+      <actions>
+        <action id="createAction" type="list_create"/>
+        <action id="editAction" type="list_edit"/>
+        <action id="removeAction" type="list_remove"/>
+      </actions>
+      <columns resizable="true">
+        <column property="id"/>
+        <column property="documents"/>
+        <column property="status"/>
+        <column property="availableFrom"/>
+        <column property="content"/>
+        <column property="documentType"/>
+        <column property="correctPacket"/>
+        <column property="inn"/>
+        <column property="kpp"/>
+        <column property="errorMessage"/>
+        <column property="createdDate"/>
+        <column property="lastModifiedDate"/>
+      </columns>
+    </dataGrid>
+    <hbox id="lookupActions" visible="false">
+      <button id="selectButton" action="selectAction"/>
+      <button id="discardButton" action="discardAction"/>
+    </hbox>
+  </layout>
+</view>

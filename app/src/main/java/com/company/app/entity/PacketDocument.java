@@ -1,5 +1,6 @@
 package com.company.app.entity;
 
+import io.jmix.core.entity.annotation.JmixId;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import io.jmix.core.metamodel.annotation.Store;
 import io.jmix.restds.annotation.RestDataStoreEntity;
@@ -13,6 +14,7 @@ import java.util.UUID;
 @RestDataStoreEntity(remoteName = "packet_PacketDocument")
 public class PacketDocument {
 
+  @JmixId
   private UUID id;
 
   private String documents;
