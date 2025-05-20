@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/flowui/menu">
+
+    <menu id="application" title="msg://com.company.server/menu.application.title" opened="true">
+        <item view="User.list" title="msg://com.company.server.view.user/UserListView.title"/>
+        <item view="bgxlsx_Order.list" description="msg://com.company.server/menu_config.bgxlsx_Order.list.description"
+              title="msg://com.company.server/menu_config.bgxlsx_Order.list.title"/>
+    </menu>
+
+</menu-config>

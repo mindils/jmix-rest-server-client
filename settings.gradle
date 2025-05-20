@@ -1,0 +1,4 @@
+rootProject.name = 'jmix-rest-server-client'
+
+includeBuild 'server'
+includeBuild 'app'
