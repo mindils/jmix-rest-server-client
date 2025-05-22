@@ -5,6 +5,8 @@ import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
+import io.jmix.core.FileStorage;
+import io.jmix.restds.filestorage.RestFileStorage;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -44,6 +46,11 @@ public class AppApplication implements AppShellConfigurator {
     @ConfigurationProperties("main.datasource.hikari")
     DataSource dataSource(final DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.initializeDataSourceBuilder().build();
+    }
+
+    @Bean("serviceappFileStorage")
+    FileStorage serviceappFileStorage() {
+        return new RestFileStorage("serviceapp", "diadoc");
     }
 
     @EventListener

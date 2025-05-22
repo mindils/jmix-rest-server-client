@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://fileDownloadView.title">
+  <layout>
+    <vbox alignItems="START" padding="true" spacing="true">
+      <textField id="fileRefField"
+                 label="msg://fileRefField.label"
+                 helperText="msg://fileRefField.helperText"
+                 width="500px"/>
+      <button id="downloadButton" text="msg://downloadButton.text"/>
+    </vbox>
+  </layout>
+</view>
+
+    
